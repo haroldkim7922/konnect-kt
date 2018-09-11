@@ -1,0 +1,23 @@
+{
+  "name": "konnect-kt",
+  "version": "1.0.0",
+  "description": "KoreaTown LifeStyle App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haroldkim7922/konnect-kt.git"
+  },
+  "author": "Harold Kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haroldkim7922/konnect-kt/issues"
+  },
+  "homepage": "https://github.com/haroldkim7922/konnect-kt#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

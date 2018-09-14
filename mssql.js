@@ -42,7 +42,7 @@ function executeProc(procName, paramsCallback) {
         return;
       }
 
-      let setIndex = 0;
+      let setIndex = -1;
       const response = {};
 
       const request = new Request(procName, (err, rowcount) => {
@@ -77,8 +77,7 @@ function executeProc(procName, paramsCallback) {
         response.outputParameters[paramName] = value;
       });
 
-      request.on("doneInProc", function(rowCount, more, rows) {
-        // End of result set, advance to next result set.
+      request.on("columnMetadata", function(columns) {
         setIndex++;
       });
 
@@ -92,5 +91,6 @@ function executeProc(procName, paramsCallback) {
 }
 
 module.exports = {
+  pool,
   executeProc
 };

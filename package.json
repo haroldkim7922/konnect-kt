@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/haroldkim7922/konnect-kt#readme",
   "dependencies": {
+    "@material-ui/core": "^3.0.3",
+    "@material-ui/icons": "^3.0.1",
     "express": "^4.16.3"
   }
 }

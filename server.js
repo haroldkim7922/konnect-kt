@@ -1,12 +1,12 @@
 const express = require("express");
-const routes = require("./app/routes");
+//const routes = require("./app/routes");
 const dotenv = require("dotenv");
 const app = express();
 
 dotenv.config();
 const port = process.env.PORT || 8080; // DO NOT REMOVE THIS LINE!!!
 
-app.use(routes);
+//app.use(routes);
 
 app.use((req, res) => {
   res.status(404).send("<h2>The path is not valid</h2>");

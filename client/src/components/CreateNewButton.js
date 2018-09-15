@@ -25,7 +25,7 @@ class CreateNewButton extends React.Component {
         <Button
           variant="fab"
           className={classes.button}
-          style={{ backgroundColor: "#44c495" }}
+          style={{ backgroundColor: "#44c495", marginLeft: "30%" }}
           onClick={this.props.addNew}
         >
           <AddIcon />

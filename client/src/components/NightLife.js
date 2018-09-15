@@ -9,8 +9,8 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import CreateNewButton from "./CreateNewButton";
-import Form from "./Form";
-import { Modal } from "reactstrap";
+import VenueForm from "./Form";
+import { Modal, ModalHeader } from "reactstrap";
 import VenueCard from "./VenueCard";
 
 const styles = {
@@ -33,14 +33,14 @@ class NightLife extends React.Component {
       {
         name: "Arena Ktown",
         address: "3319 Wilshire Blvd, Los Angeles, CA 90010",
-        url: "https://www.arenaktown.com/",
-        type: "club"
+        url: "https://www.arenaktown.com",
+        category: "club"
       },
       {
         name: "Terra Cotta",
         address: "3760 Wilshire Blvd, Los Angeles, CA 90010",
         url: "http://www.terracottala.com",
-        type: "lounge/bar"
+        category: "lounge/bar"
       }
     ]
   };
@@ -61,6 +61,11 @@ class NightLife extends React.Component {
   render() {
     const { classes } = this.props;
     const { modal } = this.state;
+    const closeBtn = (
+      <button className="close" onClick={this.handleClose}>
+        &times;
+      </button>
+    );
     return (
       <React.Fragment>
         <div className={classes.root}>
@@ -81,7 +86,7 @@ class NightLife extends React.Component {
           </AppBar>
         </div>
         <Grid container spacing={24} style={{ marginTop: "4%" }}>
-          <Grid item xs={2}>
+          <Grid item xs={1}>
             <CreateNewButton addNew={this.addNewVenue} />
           </Grid>
           <Grid item xs={4}>
@@ -92,7 +97,7 @@ class NightLife extends React.Component {
                     name={venue.name}
                     address={venue.address}
                     url={venue.url}
-                    type={venue.type}
+                    category={venue.category}
                   />
                   <br />
                 </div>
@@ -100,7 +105,10 @@ class NightLife extends React.Component {
           </Grid>
         </Grid>
         <Modal isOpen={modal} toggle={this.handleClose} style={{ top: "12%" }}>
-          <Form />
+          <ModalHeader toggle={this.handleClose} close={closeBtn}>
+            Venue
+          </ModalHeader>
+          <VenueForm />
         </Modal>
       </React.Fragment>
     );

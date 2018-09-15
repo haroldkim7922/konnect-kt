@@ -16,10 +16,16 @@ class VenueCard extends React.Component {
         {/* <CardImg src> */}
         <CardBody>
           <CardTitle>{this.props.name}</CardTitle>
-          <CardSubtitle>{this.props.address}</CardSubtitle>
-          <br />
-          <CardSubtitle>{this.props.type}</CardSubtitle>
-          <CardText>{this.props.url}</CardText>
+          <CardSubtitle>
+            {this.props.address}
+            <br /> {this.props.category}
+          </CardSubtitle>
+
+          <CardText>
+            <a href={this.props.url} target="_blank">
+              {this.props.url}
+            </a>
+          </CardText>
         </CardBody>
       </Card>
     );

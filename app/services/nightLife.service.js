@@ -11,8 +11,11 @@ const postVenue = (name, address, url, category) => {
       request.addOutputParamter("Id", TYPES.Int, null);
     })
     .then(response => {
-      const Id = response.outputParamters.Id;
+      const Id = response.outputParameters.Id;
       return Id;
+    })
+    .catch(err => {
+      return err;
     });
 };
 

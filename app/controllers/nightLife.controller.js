@@ -6,8 +6,8 @@ module.exports = {
 
     nightLifeService
       .postVenue(name, address, url, category)
-      .then(() => {
-        res.sendStatus(201);
+      .then(Id => {
+        res.status(201).json(Id);
       })
       .catch(() => {
         res.sendStatus(500);

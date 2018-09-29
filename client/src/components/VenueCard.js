@@ -9,27 +9,25 @@ import {
   //Button
 } from "reactstrap";
 
-class VenueCard extends React.Component {
-  render() {
-    return (
-      <Card>
-        {/* <CardImg src> */}
-        <CardBody>
-          <CardTitle>{this.props.name}</CardTitle>
-          <CardSubtitle>
-            {this.props.address}
-            <br /> {this.props.category}
-          </CardSubtitle>
+function VenueCard(props) {
+  return (
+    <Card>
+      {/* <CardImg src> */}
+      <CardBody>
+        <CardTitle>{props.name}</CardTitle>
+        <CardSubtitle>
+          {props.address}
+          <br /> {props.category}
+        </CardSubtitle>
 
-          <CardText>
-            <a href={this.props.url} target="_blank">
-              {this.props.url}
-            </a>
-          </CardText>
-        </CardBody>
-      </Card>
-    );
-  }
+        <CardText>
+          <a href={props.url} target="_blank">
+            {props.url}
+          </a>
+        </CardText>
+      </CardBody>
+    </Card>
+  );
 }
 
 export default VenueCard;

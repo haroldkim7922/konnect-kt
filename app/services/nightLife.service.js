@@ -8,7 +8,7 @@ const postVenue = (name, address, url, category) => {
       request.addParameter("Address", TYPES.NVarChar, address);
       request.addParameter("Url", TYPES.NVarChar, url);
       request.addParameter("Category", TYPES.NVarChar, category);
-      request.addOutputParamter("Id", TYPES.Int, null);
+      request.addOutputParameter("Id", TYPES.Int, null);
     })
     .then(response => {
       const Id = response.outputParameters.Id;
@@ -19,6 +19,21 @@ const postVenue = (name, address, url, category) => {
     });
 };
 
+const getAll = () => {
+  return mssql
+    .executeProc("Venue_SelectAll", () => {})
+    .then(response => {
+      const item = {
+        venues: response.resultSets[0]
+      };
+      return item;
+    })
+    .catch(err => {
+      return err;
+    });
+};
+
 module.exports = {
-  postVenue
+  postVenue,
+  getAll
 };

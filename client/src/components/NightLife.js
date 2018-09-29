@@ -12,6 +12,7 @@ import CreateNewButton from "./CreateNewButton";
 import VenueForm from "./Form";
 import { Modal, ModalHeader } from "reactstrap";
 import VenueCard from "./VenueCard";
+//import SideBar from "./SideBar";
 
 const styles = {
   root: {
@@ -31,7 +32,7 @@ class NightLife extends React.Component {
     modal: false,
     venueArray: [
       {
-        name: "Arena Ktown",
+        name: "Arena",
         address: "3319 Wilshire Blvd, Los Angeles, CA 90010",
         url: "https://www.arenaktown.com",
         category: "club"
@@ -40,6 +41,12 @@ class NightLife extends React.Component {
         name: "Terra Cotta",
         address: "3760 Wilshire Blvd, Los Angeles, CA 90010",
         url: "http://www.terracottala.com",
+        category: "lounge/bar"
+      },
+      {
+        name: "DwitGolMok",
+        address: "Wilshire Blvd",
+        url: "http://www.test.com",
         category: "lounge/bar"
       }
     ]
@@ -84,6 +91,7 @@ class NightLife extends React.Component {
               <Button color="inherit">Login</Button>
             </Toolbar>
           </AppBar>
+          {/* <SideBar /> */}
         </div>
         <Grid container spacing={24} style={{ marginTop: "4%" }}>
           <Grid item xs={1}>
